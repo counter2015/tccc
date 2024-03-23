@@ -1,6 +1,6 @@
 package set1
 
-import java.util.{Base64, HexFormat}
+import java.util.HexFormat
 
 object Challenge2:
 

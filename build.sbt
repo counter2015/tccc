@@ -1,6 +1,6 @@
 ThisBuild / version := "0.1.0-SNAPSHOT"
 
-ThisBuild / scalaVersion := "3.3.1"
+ThisBuild / scalaVersion := "3.4.0"
 
 ThisBuild / name := "tccc"
 
@@ -14,4 +14,14 @@ libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.18" % Test
 
 Global / onChangedBuildSource := ReloadOnSourceChanges
 
-scalafmtOnCompile                      := true
+scalafmtOnCompile := true
+semanticdbEnabled := true
+
+scalacOptions ++= Seq(
+  "-feature", // Emit warning and location for usages of features that should be imported explicitly.
+  "-deprecation", // Emit warning and location for usages of deprecated APIs.
+  "-encoding",
+  "utf-8", // Specify character encoding used by source files.
+  "-explaintypes", // Explain type errors in more detail.
+  "-Wunused:all"
+)
