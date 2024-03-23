@@ -14,10 +14,7 @@ jobs:
           java-version: '21'
       - name: Run tests
         run: sbt coverage test coverageReport
-      - name: Upload coverage reports to Codecov
-        run: |
-          # Replace `linux` below with the appropriate OS
-          # Options are `alpine`, `linux`, `macos`, `windows`
-          curl -Os https://uploader.codecov.io/latest/linux/codecov
-          chmod +x codecov
-          ./codecov -t ${CODECOV_TOKEN}
+      - uses: codecov/codecov-action@v4
+        with:
+          fail_ci_if_error: true
+          token: ${{ secrets.CODECOV_TOKEN }}
