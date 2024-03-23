@@ -8,7 +8,6 @@ object Challenge2:
     def hexToBytes: Array[Byte] =
       HexFormat.of().parseHex(str)
 
-
   extension (bytes: Array[Byte])
     def toHex: String =
       HexFormat.of().formatHex(bytes)
@@ -17,7 +16,3 @@ object Challenge2:
 
     val result = h1.zip(h2).map((a, b) => (a ^ b).toByte).toArray
     result.toHex
-
-
-
-

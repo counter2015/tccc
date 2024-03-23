@@ -10,6 +10,6 @@ class Challenge2Spec extends AnyFlatSpec with should.Matchers {
     val str2 = "686974207468652062756c6c277320657965"
     val res = "746865206b696420646f6e277420706c6179"
 
-    Challenge2.solve(str1, str2) should be (res)
+    Challenge2.solve(str1, str2) should be(res)
   }
 }
