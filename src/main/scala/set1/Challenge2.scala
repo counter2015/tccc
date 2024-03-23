@@ -14,5 +14,5 @@ object Challenge2:
   def solve(str1: String, str2: String): String =
     val (h1, h2) = (str1.hexToBytes, str2.hexToBytes)
 
-    val result = h1.zip(h2).map((a, b) => (a ^ b).toByte).toArray
+    val result = h1.zip(h2).map((a, b) => (a ^ b).toByte)
     result.toHex
