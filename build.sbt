@@ -15,6 +15,7 @@ libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.18" % Test
 Global / onChangedBuildSource := ReloadOnSourceChanges
 
 scalafmtOnCompile := true
+scalafixOnCompile := false
 semanticdbEnabled := true
 
 scalacOptions ++= Seq(
