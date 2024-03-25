@@ -28,7 +28,15 @@ object CharacterTable {
     "D" -> 3.3844,
     "J" -> 0.1965,
     "P" -> 3.1671,
-    "Q" -> 0.1962
+    "Q" -> 0.1962,
+    // I don't know exact value of space, but wikipedia says:
+    //   "In English, the space character occurs almost twice as frequently as the top letter (⟨e⟩)"
+    // I'm too lazy to correct it with another source, so I'll just double the value of 'E' of data from the link above:
+    //   https://www3.nd.edu/~busiforc/handouts/cryptography/letterfrequencies.html
+    // see:
+    //   https://en.wikipedia.org/wiki/Letter_frequency
+    //   https://web.archive.org/web/20170918020907/http://www.data-compression.com/english.html
+    " " -> 11.1607 * 2
   )
 
   /** Calculate the score of a string based on the character table.
