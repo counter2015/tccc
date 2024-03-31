@@ -6,9 +6,8 @@ ThisBuild / name := "tccc"
 
 lazy val root = (project in file("."))
   .settings(
-    name := "tccc",
+    name := "tccc"
   )
-
 
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.18" % Test
 
