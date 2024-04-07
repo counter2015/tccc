@@ -42,12 +42,4 @@ object Decrypt {
     new String(decryptedVal)
   }
 
-  def main(args: Array[String]): Unit = {
-    val key = "YELLOW SUBMARINE"
-    val encryptedData = scala.io.Source.fromResource("s1c7.txt").getLines().mkString
-    val decryptedData = AESDecryptBase64Data(encryptedData, key)
-    println("---")
-    println(decryptedData)
-    println("---")
-  }
 }

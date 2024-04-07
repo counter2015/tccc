@@ -17,6 +17,8 @@ class Challenge7Spec extends AnyFlatSpec with should.Matchers {
 
     val l1 = res.split("\n")
     val l2 = fc.split("\n")
+
+    // it's strange to just compare the result without trim, so I trim the result line by line and compile it
     compileLines(l1, l2) should be(true)
   }
 }
