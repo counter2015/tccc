@@ -1,7 +1,7 @@
 package misc
 
 object HammingDistance {
-  
+
   def ofKeyLengthNormalized(n: Int, text: String): Double = {
     val block0 = text.take(n)
     val res = text.grouped(n).filter(_.length == n).map(ofTwoString(_, block0)).sum * 1.0 / text.length

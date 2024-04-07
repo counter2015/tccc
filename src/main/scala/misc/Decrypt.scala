@@ -1,7 +1,10 @@
 package misc
 
-import java.util.HexFormat
+import java.util.{Base64, HexFormat}
 import CharacterTable.sentenceScore
+
+import javax.crypto.Cipher
+import javax.crypto.spec.SecretKeySpec
 
 object Decrypt {
 
@@ -28,5 +31,23 @@ object Decrypt {
       res = bytes.map(c => (c ^ byte).toChar).mkString
       score = sentenceScore(res)
     yield (byte, score)).minBy(_._2)._1
+  }
+
+  def AESDecryptBase64Data(encryptedData: String, key: String): String = {
+    val cipher = Cipher.getInstance("AES/ECB/PKCS5Padding")
+    val secretKey = new SecretKeySpec(key.getBytes("UTF-8"), "AES")
+    cipher.init(Cipher.DECRYPT_MODE, secretKey)
+    val decodedValue = Base64.getDecoder.decode(encryptedData)
+    val decryptedVal = cipher.doFinal(decodedValue)
+    new String(decryptedVal)
+  }
+
+  def main(args: Array[String]): Unit = {
+    val key = "YELLOW SUBMARINE"
+    val encryptedData = scala.io.Source.fromResource("s1c7.txt").getLines().mkString
+    val decryptedData = AESDecryptBase64Data(encryptedData, key)
+    println("---")
+    println(decryptedData)
+    println("---")
   }
 }
