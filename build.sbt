@@ -9,7 +9,7 @@ lazy val root = (project in file("."))
     name := "tccc"
   )
 
-libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.18" % Test
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.19" % Test
 
 Global / onChangedBuildSource := ReloadOnSourceChanges
 
