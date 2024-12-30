@@ -12,6 +12,8 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: '21'
+      - name: Install sbt
+        uses: sbt/setup-sbt@v1
       - name: Run tests
         run: sbt coverage test coverageReport
       - uses: codecov/codecov-action@v4
