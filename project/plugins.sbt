@@ -1,5 +1,5 @@
 //sbt-scalafmt https://github.com/scalameta/sbt-scalafmt
-addSbtPlugin("org.scalameta" % "sbt-scalafmt" % "2.5.4")
+addSbtPlugin("org.scalameta" % "sbt-scalafmt" % "2.5.5")
 
 // sbt-scalafix https://scalacenter.github.io/scalafix
 addSbtPlugin("ch.epfl.scala" % "sbt-scalafix" % "0.14.3")
