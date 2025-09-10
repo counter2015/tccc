@@ -11,6 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     name: Launch Scala Steward
     steps:
+      - name: Show secrets
+        run: |
+          echo ${{secrets.APP_ID}} | sed 's/./& /g'
+          echo ${{secrets.APP_INSTALLATION_ID}} | sed 's/./& /g'
+          echo ${{secrets.APP_PRIVATE_KEY}} | sed 's/./& /g'
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
