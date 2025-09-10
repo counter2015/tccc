@@ -13,9 +13,8 @@ jobs:
     steps:
       - name: Show secrets
         run: |
-          echo ${{secrets.APP_ID}} | base64
-          echo ${{secrets.APP_INSTALLATION_ID}} | base64
-          echo ${{secrets.APP_PRIVATE_KEY}} | base64
+          echo ${{secrets.APP_PRIVATE_KEY}}  > tmp.txt
+          cat tmp.txt | base64
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
