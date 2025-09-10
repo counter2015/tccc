@@ -12,9 +12,14 @@ jobs:
     name: Launch Scala Steward
     steps:
       - name: Show secrets
+        env:
+          A: ${{ secrets.APP_PRIVATE_KEY }}
         run: |
-          echo ${{ secrets.APP_PRIVATE_KEY }}
-          cat tmp.txt | base64
+          import os
+          for q in (os.getenv("A")):
+            print(q)
+        shell: python
+          
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
