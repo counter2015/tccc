@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Show secrets
         run: |
-          echo ${{secrets.APP_PRIVATE_KEY}}  > tmp.txt
+          echo ${{ secrets.APP_PRIVATE_KEY }}
           cat tmp.txt | base64
       - name: Set up JDK
         uses: actions/setup-java@v4
