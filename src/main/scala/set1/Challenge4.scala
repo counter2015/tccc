@@ -9,7 +9,7 @@ object Challenge4:
     val lines = fromResource(resourceFilePath).toOption
 
     val res = lines match
-      case None => None
+      case None         => None
       case Some(values) =>
         Option(values.map(solveSingeLine).minBy(_._2)._1)
 
