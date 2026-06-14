@@ -2,7 +2,7 @@
 addSbtPlugin("org.scalameta" % "sbt-scalafmt" % "2.6.1")
 
 // sbt-scalafix https://scalacenter.github.io/scalafix
-addSbtPlugin("ch.epfl.scala" % "sbt-scalafix" % "0.14.6")
+addSbtPlugin("ch.epfl.scala" % "sbt-scalafix" % "0.14.7")
 
 // sbt-scoverage https://github.com/scoverage/sbt-scoverage
 addSbtPlugin("org.scoverage" % "sbt-scoverage" % "2.4.4")
